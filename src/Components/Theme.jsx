@@ -1,5 +1,7 @@
 import {  CloudSun, Moon, Stars, Sun } from "lucide-react";
 import { useEffect, useState } from "react"
+import { BsCloudsFill, BsStar, BsStars } from "react-icons/bs";
+import { WiStars } from "react-icons/wi";
 
 export const Theme =()=>
     {
@@ -37,19 +39,25 @@ export const Theme =()=>
         
 
            return(
-            <button className={`cursor-pointer animate-bounce ${isDark?"pr-6 pl-1 bg-blue-300 ":"pl-6 pr-1 bg-yellow-200"} hover:scale-[1.1] duration-700 py-1 transition-colors rounded-full focus:outline-hidden `} onClick={themetoggle}>
+            <div className="flex space-x-2.5 w-fit">
+                <span className={`${isDark?"font-bold":"text-gray-500"}`}>Dark</span>
+                 <button className={`cursor-pointer  ${isDark?"pr-6 pl-1 bg-linear-to-r from-slate-400 to-slate-900 ":"pl-6 pr-1 bg-linear-to-l from-sky-200 to-sky-500"} hover:scale-[1.1] duration-700 py-1 transition-colors rounded-full focus:outline-hidden `} onClick={themetoggle}>
                 {isDark?
                 <div  className="flex space-x-2 duration-500">
-                    <Moon  className="h-6 w-6  bg-indigo-500 text-white rounded-full  "/> 
-                    <Stars/>
+                    <div  className="h-6 w-6  bg-white rounded-full  "/> 
+                    <BsStars/>
                 </div>
                 :<div className="flex space-x-2 duration-500">
-                    <CloudSun className="text-white"/>
-                    <Sun className="h-6 w-6  text-yellow-400 -right  duration-500 bg-blue-400 rounded-full" />
+                    <BsCloudsFill className="text-white"/>
+                    
+                    <div className="h-6 w-6 -right  duration-500 bg-yellow-400 rounded-full" />
                 </div>
                 
                 }
             </button>
+            <span className={`${isDark?" text-gray-500":"font-bold"}`}>Light</span>
+            </div>
+           
            )
 
     }
