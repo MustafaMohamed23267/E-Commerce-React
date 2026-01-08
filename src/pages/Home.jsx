@@ -23,6 +23,7 @@ import b8 from '../assets/b8.png';
 
 
 import { BiHeart } from "react-icons/bi";
+import { Footer } from "../Components/Footer";
 
 
 
@@ -193,6 +194,8 @@ export default function Home()
             
         </section>
     </main>
+
+    <Footer/>
     
     </>
     
