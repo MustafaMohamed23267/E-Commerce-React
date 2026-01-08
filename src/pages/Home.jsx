@@ -11,6 +11,17 @@ import two from '../assets/2.png';
 import three from '../assets/3.png';
 import four from '../assets/4.png';
 import five from '../assets/5.png';
+
+import b1 from '../assets/b1.png';
+import b2 from '../assets/b2.png';
+import b3 from '../assets/b3.png';
+import b4 from '../assets/b4.png';
+import b5 from '../assets/b5.png';
+import b6 from '../assets/b6.png';
+import b7 from '../assets/b7.png';
+import b8 from '../assets/b8.png';
+
+
 import { BiHeart } from "react-icons/bi";
 
 
@@ -69,13 +80,48 @@ export default function Home()
         
     ]
 
+    const brand =[
+        {
+            name:"Staples",
+            image:b1
+        },
+        {
+            name:"Sprouts",
+            image:b2
+        },
+        {
+            name:"Grocery outlet",
+            image:b3
+        },
+        {
+            name:"Mollie stones",
+            image:b4
+        },
+        {
+            name:"Sports Basement",
+            image:b5
+        },
+        {
+            name:"Container Store",
+            image:b6
+        },
+        {
+            name:"Target",
+            image:b7
+        },
+        {
+            name:"Bevmo!",
+            image:b8
+        },
+    ]
+
     return(
     <>
     <Nav/>
     <main>
         <section className=" flex flex-col">
-        <img src={commerce} className=" w-full h-full  z-0" />
-        <div className="absolute z-10 pt-40 pl-10 max-sm:w-60">
+        <img src={commerce} className=" w-full max-sm:w-fit h-screen z-0" />
+        <div className="absolute z-10 pt-40 max-sm:pt-20 pl-10 max-sm:w-60">
             <h2 className="text-[#003d29] text-7xl font-bold max-sm:text-4xl">shopping and <br/>
                 department store.</h2>
 
@@ -86,13 +132,13 @@ export default function Home()
         </div>
         </section>
         
-        <section className="px-10 py-30 ">
+        <section className="md:px-10 px-4 py-30 ">
             <h2 className="font-bold text-4xl z-10">Shop our top categories</h2>
 
-            <div className="grid grid-cols-6 py-6 gap-5">
+            <div className="grid grid-cols-6 py-6 gap-5 max-sm:grid-cols-2">
 
                 {images.map(cat=>
-                <button className="rounded-2xl  w-fit overflow-hidden relative cursor-pointer">
+                <button className="rounded-2xl appear w-fit overflow-hidden relative cursor-pointer">
                     <p className="absolute left-12 top-2.5 font-bold text-xl z-10 text-white">{cat.name}</p>
                     <img src={cat.image} className="hover:scale-120 duration-500 rounded-2xl" />
                 </button>)}
@@ -100,15 +146,15 @@ export default function Home()
             </div>
         </section>
 
-        <section className="px-10 pb-10 ">
+        <section className="px-10 pb-10 appear2">
              <h2 className="font-bold text-4xl z-10">Todays Best Deals for you!</h2>
 
              <div className="flex flex-nowrap gap-4 overflow-x-scroll space-x-4 p-5 ">
                 {products.map(pro=>
-                    <div className="space-y-6 shrink-0">
-                    <div className="bg-gray-200 rounded-md relative px-8 ">
+                    <div className="space-y-6 shrink-0 ">
+                    <div className="bg-gray-200 dark:bg-gray-950 rounded-md relative px-8 ">
                         <img src={pro.image} className="hover:scale-110 duration-500 cursor-pointer"/>
-                        <div className="absolute bg-amber-50 rounded-full p-1 top-2 right-2 text-2xl hover:text-rose-600 cursor-pointer duration-700"><BiHeart/></div>
+                        <div className="absolute bg-amber-50 rounded-full p-1 top-2 right-2 text-2xl hover:text-rose-600 cursor-pointer duration-700 dark:bg-gray-900"><BiHeart/></div>
                         
                     </div>
                     <div className="flex justify-between text-lg font-semibold">
@@ -118,6 +164,26 @@ export default function Home()
                     <p className="text-sm">{pro.desc}</p>
 
                     <button className="px-6 py-2 border duration-500 rounded-full cursor-pointer hover:bg-[#036846] hover:text-white hover:border-[#036846]">Add to Cart</button>
+                    </div>
+                )}
+                
+
+             </div>
+
+            
+        </section>
+
+         <section className="px-10 py-10 space-y-5 ">
+             <h2 className="font-bold text-4xl z-10">Choose By Brand</h2>
+
+             <div className="grid grid-cols-4 gap-4 space-x-4 max-sm:grid-cols-2 ">
+                {brand.map(bra=>
+                    <div className="flex w-full space-x-3 border border-background items-center hover:border hover:border-foreground rounded-lg px-3 py-5 bg-gray-100 duration-500 dark:bg-gray-950 appear">
+                        <div><img src={bra.image} className="hover:scale-130 duration-500" /></div>
+                        <div className="space-y-2">
+                            <p className="font-bold">{bra.name}</p>
+                            <p className="text-sm">Delivery with in 24 hours</p>
+                        </div>
                     </div>
                 )}
                 
