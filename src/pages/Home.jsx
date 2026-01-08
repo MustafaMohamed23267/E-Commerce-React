@@ -1,12 +1,80 @@
 import { Nav } from "../Components/Nav";
 import commerce from '../assets/commerce11.jpg';
+import sneakers from '../assets/sneak.png';
+import travel from '../assets/travel.png';
+import tech from '../assets/tech.png';
+import books from '../assets/books.png';
+import hand from '../assets/hand.png';
+import fu from '../assets/fu.png';
+import one from '../assets/1.png';
+import two from '../assets/2.png';
+import three from '../assets/3.png';
+import four from '../assets/4.png';
+import five from '../assets/5.png';
+import { BiHeart } from "react-icons/bi";
+
+
+
+
+
 export default function Home()
 {
+    const images = [
+        {name:"Sneakers",
+         image:sneakers
+        },
+        {name:"Travel",
+         image:travel},
+        {name:"Tech",
+         image:tech},   
+        {name:"Books",
+         image:books},
+        {name:"Hand Bag",
+         image:hand},
+        {name:"Furniture",
+         image:fu},
+    ];
+
+     const products = [
+        {
+        name:"HomePod mini",
+        price:"239",
+        desc:"Table with air purifier, stained venner,black",
+        image:one
+        },
+        {
+        name:"Instax Mini 9",
+        price:"99",
+        desc:"Selfie mode and selfie mirror, Macro mode ",
+        image:two
+        },
+        {
+        name:"Base Camp Duffel M",
+        price:"159",
+        desc:"Table with air purifier, stained venner,black",
+        image:three
+        },
+        {
+        name:"Base Camp Duffel M",
+        price:"159",
+        desc:"Table with air purifier, stained venner,black",
+        image:four
+        },
+        {
+        name:"Base Camp Duffel M",
+        price:"159",
+        desc:"Table with air purifier, stained venner,black",
+        image:five
+        },
+        
+    ]
+
     return(
     <>
     <Nav/>
-    <section>
-        <img src={commerce} className=" w-full h-full absolute z-0" />
+    <main>
+        <section className=" flex flex-col">
+        <img src={commerce} className=" w-full h-full  z-0" />
         <div className="absolute z-10 pt-40 pl-10 max-sm:w-60">
             <h2 className="text-[#003d29] text-7xl font-bold max-sm:text-4xl">shopping and <br/>
                 department store.</h2>
@@ -16,7 +84,50 @@ export default function Home()
 
                  <button className="px-8 py-4 rounded-full bg-[#003d29] text-white cursor-pointer hover:bg-[#036846] duration-500">Learn More</button>
         </div>
-    </section>
+        </section>
+        
+        <section className="px-10 py-30 ">
+            <h2 className="font-bold text-4xl z-10">Shop our top categories</h2>
+
+            <div className="grid grid-cols-6 py-6 gap-5">
+
+                {images.map(cat=>
+                <button className="rounded-2xl  w-fit overflow-hidden relative cursor-pointer">
+                    <p className="absolute left-12 top-2.5 font-bold text-xl z-10 text-white">{cat.name}</p>
+                    <img src={cat.image} className="hover:scale-120 duration-500 rounded-2xl" />
+                </button>)}
+
+            </div>
+        </section>
+
+        <section className="px-10 pb-10 ">
+             <h2 className="font-bold text-4xl z-10">Todays Best Deals for you!</h2>
+
+             <div className="flex flex-nowrap gap-4 overflow-x-scroll space-x-4 p-5 ">
+                {products.map(pro=>
+                    <div className="space-y-6 shrink-0">
+                    <div className="bg-gray-200 rounded-md relative px-8 ">
+                        <img src={pro.image} className="hover:scale-110 duration-500 cursor-pointer"/>
+                        <div className="absolute bg-amber-50 rounded-full p-1 top-2 right-2 text-2xl hover:text-rose-600 cursor-pointer duration-700"><BiHeart/></div>
+                        
+                    </div>
+                    <div className="flex justify-between text-lg font-semibold">
+                        <p>{pro.name}</p>
+                        <p><sup className="text-sm ">$</sup>{pro.price} <sup className="text-sm ">.00</sup></p>
+                    </div>
+                    <p className="text-sm">{pro.desc}</p>
+
+                    <button className="px-6 py-2 border duration-500 rounded-full cursor-pointer hover:bg-[#036846] hover:text-white hover:border-[#036846]">Add to Cart</button>
+                    </div>
+                )}
+                
+
+             </div>
+
+            
+        </section>
+    </main>
+    
     </>
     
 )
