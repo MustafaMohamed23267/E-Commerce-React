@@ -147,7 +147,7 @@ export default function Home()
             </div>
         </section>
 
-        <section className="px-10 pb-10 appear2">
+        <section className="px-10 pb-10 appear">
              <h2 className="font-bold text-4xl z-10">Todays Best Deals for you!</h2>
 
              <div className="flex flex-nowrap gap-4 overflow-x-scroll space-x-4 p-5 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200">
