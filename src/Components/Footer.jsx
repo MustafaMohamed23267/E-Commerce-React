@@ -79,10 +79,10 @@ export const Footer = ()=>
         <>
         <hr className='mx-30 text-gray-300 ' />
         <footer className='py-5'>
-            <div className="grid grid-cols-6 gap-4 p-10  space-x-10 max-sm:space-x-2 max-sm:gap-1 max-sm:text-sm max-sm:grid-col-5 max-sm:p-2">
+            <div className="grid grid-cols-6 gap-4 p-10  space-x-10 max-sm:space-x-4  max-sm:text-sm max-sm:grid-col-5 max-sm:p-2">
             <div className='space-y-6 col-span-2 '>
                  <div className="flex space-x-1.5">
-                    <img src={cart} className="w-10"/>
+                    <img src={cart} className="w-10 max-sm:w-5"/>
                     <h1 className="text-[#003d29] text-3xl font-bold max-sm:text-lg">ShopCart </h1>
                 </div>
 
