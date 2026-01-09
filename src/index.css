@@ -60,6 +60,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: #003d29; /* indigo-500 */
   border-radius: 9999px;
+  
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -69,7 +70,7 @@ body {
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #003d29 #f1f5f9;
+  scrollbar-color: #003d29 #d6f8f4;
 }
 
 

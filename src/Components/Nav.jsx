@@ -32,13 +32,13 @@ export const Nav = ()=>
         return(
             <>
             <div className=" z-60">
-                 <div  className="bg-[#003d29] text-white flex justify-between w-full py-1.5 px-3 md:px-10">
+                <div  className="bg-[#003d29] text-white flex justify-between space-x-8 w-full py-1.5 px-2 md:px-10">
                 <div className="flex space-x-1.5 max-sm:text-sm"> 
                     <MdLocalPhone className="mt-1"/>
                     <span>+201110792037</span>
                 </div>
 
-                <div className="space-x-5 max-sm:text-sm">
+                <div className="space-x-5 max-sm:space-x-2 max-sm:text-sm w-fit">
                     <span>Get 50% Off on Selected Items</span>
                     <span>|</span>
                     <span>Shop Now</span>
@@ -58,7 +58,9 @@ export const Nav = ()=>
                 </div>
                 </div>
 
-                <div className="flex justify-between py-5 px-8 ">
+{/* mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */}
+
+                <div className="flex justify-between py-5 px-8 max-sm:px-2">
                     <div className="flex space-x-1.5">
                         <img src={cart} className="w-10"/>
                     <h1 className="text-[#003d29] text-3xl font-bold">ShopCart </h1>
