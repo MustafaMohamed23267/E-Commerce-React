@@ -48,6 +48,31 @@ body {
             
         }
 
+  /* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9; /* slate-100 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #003d29; /* indigo-500 */
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #002217; /* indigo-600 */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #003d29 #f1f5f9;
+}
+
+
   .appear{
   animation: appear 5s ease-out;
   animation-timeline: view();

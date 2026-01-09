@@ -150,7 +150,7 @@ export default function Home()
         <section className="px-10 pb-10 appear2">
              <h2 className="font-bold text-4xl z-10">Todays Best Deals for you!</h2>
 
-             <div className="flex flex-nowrap gap-4 overflow-x-scroll space-x-4 p-5 ">
+             <div className="flex flex-nowrap gap-4 overflow-x-scroll space-x-4 p-5 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200">
                 {products.map(pro=>
                     <div className="space-y-6 shrink-0 ">
                     <div className="bg-gray-200 dark:bg-gray-950 rounded-md relative px-8 ">

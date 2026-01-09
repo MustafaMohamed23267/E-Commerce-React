@@ -77,20 +77,20 @@ export const Footer = ()=>
 
         return(
         <>
-        <hr className='mx-30 text-gray-300' />
+        <hr className='mx-30 text-gray-300 ' />
         <footer className='py-5'>
-            <div className="grid grid-cols-6 gap-4 p-10 space-x-10">
-            <div className='space-y-6 col-span-2'>
+            <div className="grid grid-cols-6 gap-4 p-10  space-x-10 max-sm:space-x-2 max-sm:gap-1 max-sm:text-sm max-sm:grid-col-5 max-sm:p-2">
+            <div className='space-y-6 col-span-2 '>
                  <div className="flex space-x-1.5">
                     <img src={cart} className="w-10"/>
-                    <h1 className="text-[#003d29] text-3xl font-bold">ShopCart </h1>
+                    <h1 className="text-[#003d29] text-3xl font-bold max-sm:text-lg">ShopCart </h1>
                 </div>
 
                 <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
 
                 <div className='space-y-4'>
                     <h2 className='font-bold text-lg'>Accepted Payments</h2>
-                    <div className='grid grid-cols-4 gap-2 w-60'>
+                    <div className='grid grid-cols-4 gap-2 w-60 max-sm:grid-cols-2 max-sm:w-30'>
                         {payments.map(pay=>
                         <div className='p-1.5 flex justify-center outline outline-gray-300 dark:outline-gray-600 bg-amber-50 rounded-sm'>
                             <img src={pay.img}className='' />
@@ -101,28 +101,28 @@ export const Footer = ()=>
            
 
             <div className='space-y-6'>
-                <h2 className='font-bold text-xl'>Department</h2>
+                <h2 className='font-bold text-xl max-sm:text-sm'>Department</h2>
                 <div className='flex flex-col space-y-2'>
                     {departments.map(dep=><Link className='hover:text-red-400 hover:translate-x-4 duration-500 hover:font-semibold'>{dep.name}</Link>)}
                 </div>
             </div>
 
             <div className='space-y-6'>
-                <h2 className='font-bold text-xl'>About us</h2>
+                <h2 className='font-bold text-xl max-sm:text-sm'>About us</h2>
                 <div className='flex flex-col space-y-2'>
                     {about.map(dep=><Link className='hover:text-red-400 hover:translate-x-4 duration-500 hover:font-semibold '>{dep.name}</Link>)}
                 </div>
             </div>
 
             <div className='space-y-6'>
-                <h2 className='font-bold text-xl'>Services</h2>
+                <h2 className='font-bold text-xl max-sm:text-sm'>Services</h2>
                 <div className='flex flex-col space-y-2'>
                     {Services.map(dep=><Link className='hover:text-red-400 hover:translate-x-4 duration-500 hover:font-semibold'>{dep.name}</Link>)}
                 </div>
             </div>
 
             <div className='space-y-6'>
-                <h2 className='font-bold text-xl'>Help</h2>
+                <h2 className='font-bold text-xl max-sm:text-sm'>Help</h2>
                 <div className='flex flex-col space-y-2'>
                     {help.map(dep=><Link className='hover:text-red-400 hover:translate-x-4 duration-500 hover:font-semibold'>{dep.name}</Link>)}
                 </div>
@@ -130,28 +130,28 @@ export const Footer = ()=>
 
         </div>
         <hr className='mx-10 text-gray-300'/>
-        <div className='flex justify-between p-10 space-x-12 font-semibold'>
+        <div className='flex justify-between max-sm:flex-wrap space-y-3 max-sm:justify-center p-10 space-x-12 font-semibold max-sm:text-sm max-sm:space-x-5 max-sm:p-2'>
 
             <div className='space-x-6 flex'>
 
                 <div className='flex space-x-1.5'>
-                    <FaBriefcase className='text-[#c34482]'/>
+                    <FaBriefcase className='text-[#c34482] text-2xl'/>
                     <Link className='hover:text-red-400 duration-500'>Become Seller</Link>
                 </div>
 
                 <div className='flex space-x-1.5'>
-                    <BsGiftFill className='text-[#c34482]' />
+                    <BsGiftFill className='text-[#c34482] text-2xl' />
                     <Link className='hover:text-red-400 duration-500'>Gift Cards</Link>
                 </div>
             
                 <div className='flex space-x-1.5'>
-                    <IoMdHelpCircleOutline className='text-[#c34482]'/>
+                    <IoMdHelpCircleOutline className='text-[#c34482] text-2xl'/>
                     <Link className='hover:text-red-400 duration-500'>Help Canter</Link>
                 </div>
             </div>
            
 
-            <div className='space-x-4'>
+            <div className='space-x-4 max-sm:text-sm'>
                 <Link className='hover:text-red-400 duration-500'>Terms of Service</Link>
                 <Link className='hover:text-red-400 duration-500'>Privacy & Policy</Link>
             </div>
