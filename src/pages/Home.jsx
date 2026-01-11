@@ -21,6 +21,12 @@ import b6 from '../assets/b6.png';
 import b7 from '../assets/b7.png';
 import b8 from '../assets/b8.png';
 
+import off1 from '../assets/off1.png';
+import off2 from '../assets/off2.png';
+import off3 from '../assets/off3.png';
+import off4 from '../assets/off4.png';
+
+
 
 import { BiHeart } from "react-icons/bi";
 import { Footer } from "../Components/Footer";
@@ -116,6 +122,25 @@ export default function Home()
         },
     ]
 
+    const off= [
+        {off:"100",
+            img:off1,
+            bg:"teal"
+        },
+        {off:"29",
+            img:off2,
+            bg:"indigo"
+        },
+        {off:"67",
+            img:off3,
+            bg:"lime"
+        },
+        {off:"50",
+            img:off4,
+            bg:"rose"
+        },
+    ]
+
     return(
     <>
     <Nav/>
@@ -192,6 +217,26 @@ export default function Home()
              </div>
 
             
+        </section >
+
+        <section className="px-10 py-10 space-y-10 ">
+            <h2 className="font-bold text-4xl z-10">Get Up to 70% off</h2>
+
+            <div className="grid grid-cols-4 gap-6 max-sm:grid-cols-1">
+                {off.map(o=>
+                <div className={` overflow-hidden rounded-2xl space-y-4 bg-${o.bg}-100 appear`}>
+                    <div className={` p-5  space-y-4` }>
+                        <p className="font-bold text-3xl text-gray-700">Save</p>
+                        <p className={`text-${o.bg}-900 font-bold text-5xl`}><sup className="text-lg">$</sup>{o.off}</p>
+                        <p className="font-medium text-gray-950">Explore Our Furniture & Home Furnishing Range</p>
+                    </div>
+                    <div className="overflow-hidden">
+                       <img src={o.img} className="w-full hover:scale-125 duration-700" />
+
+                    </div>
+                </div>
+               )}
+            </div>
         </section>
     </main>
 
