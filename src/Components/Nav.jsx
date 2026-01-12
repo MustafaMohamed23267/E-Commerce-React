@@ -72,7 +72,7 @@ export const Nav = ()=>
 
                     <div className=" flex ">
                         
-                            <input type="text" className="rounded-full outline-1 outline-gray-300 focus:outline-indigo-500 px-2 w-70 max-sm:w-40"
+                            <input type="text" className="rounded-full outline-1 outline-gray-300 focus:outline-indigo-500 px-2 w-70 max-sm:hidden"
                             placeholder="Search product"
                             />  
                     </div>

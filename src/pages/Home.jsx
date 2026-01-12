@@ -239,15 +239,15 @@ export default function Home()
             </div>
         </section>
 
-        <section className="py-10 relative overflow-">
-                <img src={room} className="w-full h-full appear2" />
+        <section className="my-10  relative ">
+                <img src={room} className="w-full h-full appear2 max-sm:h-100" />
             
             
 
-            <div className="absolute bg-[#003d29] w-130 h-110 top-40 right-10 p-14 space-y-10">
-                <h2 className="text-5xl text-white font-bold">Get 5% Cash back on $200</h2>
-                <p className="text-xl text-white">Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank balance.</p>
-                <button className="rounded-full py-3 px-8 text-white border border-white hover:bg-gray-800 hover:border-gray-800 duration-500 text-xl cursor-pointer">Learn More</button>
+            <div className="absolute bg-[#003d29] md:w-130 md:h-110 max-sm:mx-3  top-40 right-10 max-sm:top-5 max-sm:right-1 p-14 max-sm:p-4 space-y-10">
+                <h2 className="text-5xl text-white font-bold max-sm:text-xl">Get 5% Cash back on $200</h2>
+                <p className="text-xl max-sm:text-md text-white">Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank balance.</p>
+                <button className="rounded-full py-3 px-8 text-white border border-white hover:bg-gray-800 hover:border-gray-800 duration-500 text-xl max-sm:text-md cursor-pointer">Learn More</button>
             </div>
         </section>
     </main>
