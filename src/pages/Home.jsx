@@ -264,7 +264,7 @@ export default function Home()
         <section className="space-y-10 p-5">
               <h2 className="font-bold text-4xl z-10">Todays Best Deals for you!</h2>
 
-              <div className="flex space-x-3">
+              <div className="flex space-x-3 flex-wrap">
                 {filter.map(fi=>
                 <button className="outline outline-gray-300 rounded-full px-4 py-2 font-medium cursor-pointer">{fi.name}</button>
                 )}
