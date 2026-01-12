@@ -92,7 +92,7 @@ export const Footer = ()=>
                     <h2 className='font-bold text-lg'>Accepted Payments</h2>
                     <div className='grid grid-cols-4 gap-2 w-60 max-sm:grid-cols-2 max-sm:w-30'>
                         {payments.map(pay=>
-                        <div className='p-1.5 flex justify-center outline outline-gray-300 dark:outline-gray-600 bg-amber-50 rounded-sm'>
+                        <div className='p-1.5 flex justify-center outline outline-gray-300 dark:outline-gray-600 bg-white/85 rounded-sm'>
                             <img src={pay.img}className='' />
                         </div>)}
                     </div>
@@ -130,7 +130,7 @@ export const Footer = ()=>
 
         </div>
         <hr className='mx-10 text-gray-300'/>
-        <div className='flex justify-between max-sm:flex-wrap space-y-3 max-sm:justify-center p-10 space-x-12 font-semibold max-sm:text-sm max-sm:space-x-5 max-sm:p-2'>
+        <div className='flex justify-between max-sm:flex-wrap space-y-3 max-sm:justify-center p-10 space-x-12 font-medium max-sm:text-sm max-sm:space-x-5 max-sm:p-2'>
 
             <div className='space-x-6 flex'>
 
@@ -157,7 +157,7 @@ export const Footer = ()=>
             </div>
 
             <div>
-                <p>All Right reserved by Mustafa-Mohamed design agency | 2026</p>
+                <p className='font-medium'>All Right reserved by Mustafa-Mohamed design agency | 2026</p>
             </div>
         </div>
         </footer>

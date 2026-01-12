@@ -141,6 +141,16 @@ export default function Home()
         },
     ]
 
+    const filter = [
+        {name:"Gadgets"},
+        {name:"Fashion"},
+        {name:"Toys"},
+        {name:"Education"},
+        {name:"Beauty"},
+        {name:"Fitness"},
+        {name:"Sneakers"},
+    ]
+
     return(
     <>
     <Nav/>
@@ -173,7 +183,7 @@ export default function Home()
         </section>
 
         <section className="px-10 pb-10 appear">
-             <h2 className="font-bold text-4xl z-10">Todays Best Deals for you!</h2>
+             <h2 className="font-bold text-4xl z-10">Weekly Popular Products</h2>
 
              <div className="flex flex-nowrap gap-4 overflow-x-scroll space-x-4 p-5 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200">
                 {products.map(pro=>
@@ -249,6 +259,37 @@ export default function Home()
                 <p className="text-xl max-sm:text-xl text-white">Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank balance.</p>
                 <button className="rounded-full py-3 px-8 text-white border border-white hover:bg-gray-800 hover:border-gray-800 duration-500 text-xl max-sm:text-md cursor-pointer">Learn More</button>
             </div>
+        </section>
+
+        <section className="space-y-10 p-5">
+              <h2 className="font-bold text-4xl z-10">Todays Best Deals for you!</h2>
+
+              <div className="flex space-x-3">
+                {filter.map(fi=>
+                <button className="outline outline-gray-300 rounded-full px-4 py-2 font-medium cursor-pointer">{fi.name}</button>
+                )}
+              </div>
+
+             <div className="flex flex-wrap gap-4  space-x-4 p-5 ">
+                {products.map(pro=>
+                    <div className="space-y-6 shrink-0 appear ">
+                    <div className="bg-gray-200 dark:bg-gray-950 rounded-md relative px-8 ">
+                        <img src={pro.image} className="hover:scale-110 duration-500 cursor-pointer"/>
+                        <div className="absolute bg-amber-50 rounded-full p-1 top-2 right-2 text-2xl hover:text-rose-600 cursor-pointer duration-700 dark:bg-gray-900"><BiHeart/></div>
+                        
+                    </div>
+                    <div className="flex justify-between text-lg font-semibold">
+                        <p>{pro.name}</p>
+                        <p><sup className="text-sm ">$</sup>{pro.price} <sup className="text-sm ">.00</sup></p>
+                    </div>
+                    <p className="text-sm">{pro.desc}</p>
+
+                    <button className="px-6 py-2 border duration-500 rounded-full cursor-pointer hover:bg-[#036846] hover:text-white hover:border-[#036846]">Add to Cart</button>
+                    </div>
+                )}
+                
+
+             </div>
         </section>
     </main>
 
