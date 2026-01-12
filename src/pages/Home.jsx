@@ -264,13 +264,13 @@ export default function Home()
         <section className="space-y-10 p-5">
               <h2 className="font-bold text-4xl z-10">Todays Best Deals for you!</h2>
 
-              <div className="flex space-x-3 flex-wrap">
+              <div className="flex space-x-3 flex-wrap gap-4 ">
                 {filter.map(fi=>
                 <button className="outline outline-gray-300 rounded-full px-4 py-2 font-medium cursor-pointer">{fi.name}</button>
                 )}
               </div>
 
-             <div className="flex flex-wrap gap-4  space-x-4 p-5 ">
+             <div className="flex flex-wrap gap-4 w-full space-x-4 p-5 ">
                 {products.map(pro=>
                     <div className="space-y-6 shrink-0 appear ">
                     <div className="bg-gray-200 dark:bg-gray-950 rounded-md relative px-8 ">
