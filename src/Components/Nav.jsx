@@ -31,7 +31,7 @@ export const Nav = ()=>
          const [menu , setMenu] = useState(false);
         return(
             <>
-            <div className=" z-60 fixed md:w-full bg-background">
+            <div className=" z-60 fixed w-full bg-background">
                 <div  className="bg-[#003d29] text-white flex justify-between space-x-8 w-full py-1.5 px-2 md:px-10">
                 <div className="flex space-x-1.5 max-sm:text-sm"> 
                     <MdLocalPhone className="mt-1"/>
