@@ -26,6 +26,10 @@ import off2 from '../assets/off2.png';
 import off3 from '../assets/off3.png';
 import off4 from '../assets/off4.png';
 
+import cards1 from '../assets/cards.png';
+import cards2 from '../assets/cards2.png';
+
+
 import room from '../assets/room2.jpg';
 
 import { BiHeart } from "react-icons/bi";
@@ -290,6 +294,23 @@ export default function Home()
                 
 
              </div>
+        </section>
+
+        <section className="py-10 ">
+
+            <div className="flex justify-around bg-rose-100 p-15 relative">
+                <div className="space-y-8 z-10">
+                    <p className="text-6xl font-bold text-gray-800">Get 5% Cash back</p>
+                    <p className="text-2xl">on Shopcart.com</p>
+                    <button className="rounded-full py-3 px-8 text-white bg-[#003d29] hover:bg-[#001d13]  duration-500 text-xl max-sm:text-md cursor-pointer">Learn More</button>
+                </div>
+
+                <div className="z-0">
+                    <img src={cards1} className="absolute -rotate-20 top-20 right-10 max-sm:top-40 max-sm:right-0" />
+                    <img src={cards2} className="absolute -rotate-30 top-17 right-15 max-sm:top-37 max-sm:right-5" />
+                </div>
+
+            </div>
         </section>
     </main>
 
