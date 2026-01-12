@@ -154,7 +154,7 @@ export default function Home()
     return(
     <>
     <Nav/>
-    <main>
+    <main className="max-sm:w-full">
         <section className=" flex flex-col">
         <img src={commerce} className=" w-full max-sm:w-fit h-screen z-0" />
         <div className="absolute z-10 pt-40 max-sm:pt-20 pl-10 max-sm:w-60">
