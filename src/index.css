@@ -81,8 +81,8 @@ body {
 }
 
 .appear2{
-  animation: appear2 1s ease-out;
-  /* animation-timeline: view(); */
+ animation: appear2 both;
+  animation-timeline: view(40%  5%);
   /* animation-range: entry 0 cover 30%; */
 }
 
@@ -106,14 +106,15 @@ body {
 @keyframes appear2 {
         from
         {
-            transform: translateY(80px);
+          scale: 1.03;
+            /* transform: translateY(80px); */
            
         }
        
         to
         {
-            
-             transform: translateY(0px);
+            scale: 1;
+             /* transform: translateY(0px); */
             
         }
     }

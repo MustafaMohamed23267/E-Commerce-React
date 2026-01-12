@@ -26,7 +26,7 @@ import off2 from '../assets/off2.png';
 import off3 from '../assets/off3.png';
 import off4 from '../assets/off4.png';
 
-
+import room from '../assets/room2.jpg';
 
 import { BiHeart } from "react-icons/bi";
 import { Footer } from "../Components/Footer";
@@ -129,7 +129,7 @@ export default function Home()
         },
         {off:"29",
             img:off2,
-            bg:"indigo"
+            bg:"purple"
         },
         {off:"67",
             img:off3,
@@ -236,6 +236,18 @@ export default function Home()
                     </div>
                 </div>
                )}
+            </div>
+        </section>
+
+        <section className="py-10 relative overflow-">
+                <img src={room} className="w-full h-full appear2" />
+            
+            
+
+            <div className="absolute bg-[#003d29] w-130 h-110 top-40 right-10 p-14 space-y-10">
+                <h2 className="text-5xl text-white font-bold">Get 5% Cash back on $200</h2>
+                <p className="text-xl text-white">Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank balance.</p>
+                <button className="rounded-full py-3 px-8 text-white border border-white hover:bg-gray-800 hover:border-gray-800 duration-500 text-xl cursor-pointer">Learn More</button>
             </div>
         </section>
     </main>
