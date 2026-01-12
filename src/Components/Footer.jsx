@@ -79,7 +79,8 @@ export const Footer = ()=>
         <>
         <hr className='mx-30 text-gray-300 ' />
         <footer className='py-5'>
-            <div className="grid grid-cols-6 gap-4 p-10  space-x-10 max-sm:space-x-4  max-sm:text-sm max-sm:grid-col-5 max-sm:p-2">
+            <div className="grid grid-cols-6 gap-4 p-10  space-x-10 max-sm:space-x-8  max-sm:text-sm  max-sm:p-2">
+
             <div className='space-y-6 col-span-2 '>
                  <div className="flex space-x-1.5">
                     <img src={cart} className="w-10 max-sm:w-5"/>
@@ -101,28 +102,28 @@ export const Footer = ()=>
            
 
             <div className='space-y-6'>
-                <h2 className='font-bold text-xl max-sm:text-sm'>Department</h2>
+                <h2 className='font-bold text-xl max-sm:text-sm max-sm:font-medium'><span className='max-sm:hidden'>Department</span> <span className='md:hidden'>Depart</span></h2>
                 <div className='flex flex-col space-y-2'>
                     {departments.map(dep=><Link className='hover:text-red-400 hover:translate-x-4 duration-500 hover:font-semibold'>{dep.name}</Link>)}
                 </div>
             </div>
 
             <div className='space-y-6'>
-                <h2 className='font-bold text-xl max-sm:text-sm'>About us</h2>
+                <h2 className='font-bold text-xl max-sm:text-sm max-sm:font-medium'>About us</h2>
                 <div className='flex flex-col space-y-2'>
                     {about.map(dep=><Link className='hover:text-red-400 hover:translate-x-4 duration-500 hover:font-semibold '>{dep.name}</Link>)}
                 </div>
             </div>
 
             <div className='space-y-6'>
-                <h2 className='font-bold text-xl max-sm:text-sm'>Services</h2>
+                <h2 className='font-bold text-xl max-sm:text-sm max-sm:font-medium'>Services</h2>
                 <div className='flex flex-col space-y-2'>
                     {Services.map(dep=><Link className='hover:text-red-400 hover:translate-x-4 duration-500 hover:font-semibold'>{dep.name}</Link>)}
                 </div>
             </div>
 
             <div className='space-y-6'>
-                <h2 className='font-bold text-xl max-sm:text-sm'>Help</h2>
+                <h2 className='font-bold text-xl max-sm:text-sm max-sm:font-medium'>Help</h2>
                 <div className='flex flex-col space-y-2'>
                     {help.map(dep=><Link className='hover:text-red-400 hover:translate-x-4 duration-500 hover:font-semibold'>{dep.name}</Link>)}
                 </div>
