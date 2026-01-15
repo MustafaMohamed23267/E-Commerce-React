@@ -39,23 +39,23 @@ export const Theme =()=>
         
 
            return(
-            <div className="flex space-x-2.5 w-fit">
+            <div className="flex space-x-2.5 w-fit duration-700">
                 <span className={`${isDark?"font-bold":"text-gray-500"}`}>Dark</span>
-                 <button className={`cursor-pointer  ${isDark?"pr-6 pl-1 bg-linear-to-r from-slate-400 to-slate-900 ":"pl-6 pr-1 bg-linear-to-l from-sky-200 to-sky-500"} hover:scale-[1.1] duration-700 py-1 transition-colors rounded-full focus:outline-hidden `} onClick={themetoggle}>
+                 <button className={`duration-700 cursor-pointer  ${isDark?"pr-6 pl-1 bg-linear-to-r from-slate-400 to-slate-900 ":"pl-6 pr-1 bg-linear-to-l from-sky-200 to-sky-500"} hover:scale-[1.07]  py-1 transition-colors rounded-full focus:outline-hidden `} onClick={themetoggle}>
                 {isDark?
-                <div  className="flex space-x-2 duration-500">
+                <div  className="flex space-x-2 duration-700">
                     <div  className="h-6 w-6  bg-white rounded-full  "/> 
                     <BsStars/>
                 </div>
-                :<div className="flex space-x-2 duration-500">
+                :<div className="flex space-x-2 duration-700">
                     <BsCloudsFill className="text-white"/>
                     
-                    <div className="h-6 w-6 -right  duration-500 bg-yellow-400 rounded-full" />
+                    <div className="h-6 w-6 -right  duration-700 bg-yellow-400 rounded-full" />
                 </div>
                 
                 }
             </button>
-            <span className={`${isDark?" text-gray-500":"font-bold"}`}>Light</span>
+            <span className={`duration-700 ${isDark?" text-gray-500":"font-bold"}`}>Light</span>
             </div>
            
            )

@@ -274,10 +274,10 @@ export default function Home()
                 )}
               </div>
 
-             <div className="grid grid-c max-sm:grid-cols-1 gap-4  space-x-4 p-5 ">
+             <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-4  space-x-4 p-5 ">
                 {products.map(pro=>
                     <div className="space-y-6 shrink-0 appear ">
-                    <div className="bg-gray-200 dark:bg-gray-950 rounded-md relative px-8 ">
+                    <div className="bg-gray-200 dark:bg-gray-950/70 rounded-md relative px-8 flex justify-center">
                         <img src={pro.image} className="hover:scale-110 duration-500 cursor-pointer"/>
                         <div className="absolute bg-amber-50 rounded-full p-1 top-2 right-2 text-2xl hover:text-rose-600 cursor-pointer duration-700 dark:bg-gray-900"><BiHeart/></div>
                         
