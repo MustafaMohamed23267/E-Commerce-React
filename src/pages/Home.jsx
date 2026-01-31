@@ -39,285 +39,305 @@ import { Footer } from "../Components/Footer";
 
 
 
-export default function Home()
-{
+export default function Home() {
     const images = [
-        {name:"Sneakers",
-         image:sneakers
+        {
+            name: "Sneakers",
+            image: sneakers
         },
-        {name:"Travel",
-         image:travel},
-        {name:"Tech",
-         image:tech},   
-        {name:"Books",
-         image:books},
-        {name:"Hand Bag",
-         image:hand},
-        {name:"Furniture",
-         image:fu},
+        {
+            name: "Travel",
+            image: travel
+        },
+        {
+            name: "Tech",
+            image: tech
+        },
+        {
+            name: "Books",
+            image: books
+        },
+        {
+            name: "Hand Bag",
+            image: hand
+        },
+        {
+            name: "Furniture",
+            image: fu
+        },
     ];
 
-     const products = [
+    const products = [
         {
-        name:"HomePod mini",
-        price:"239",
-        desc:"Table with air purifier, stained venner,black",
-        image:one
+            name: "HomePod mini",
+            price: "239",
+            desc: "Table with air purifier, stained venner,black",
+            image: one
         },
         {
-        name:"Instax Mini 9",
-        price:"99",
-        desc:"Selfie mode and selfie mirror, Macro mode ",
-        image:two
+            name: "Instax Mini 9",
+            price: "99",
+            desc: "Selfie mode and selfie mirror, Macro mode ",
+            image: two
         },
         {
-        name:"Base Camp Duffel M",
-        price:"159",
-        desc:"Table with air purifier, stained venner,black",
-        image:three
+            name: "Base Camp Duffel M",
+            price: "159",
+            desc: "Table with air purifier, stained venner,black",
+            image: three
         },
         {
-        name:"Base Camp Duffel M",
-        price:"159",
-        desc:"Table with air purifier, stained venner,black",
-        image:four
+            name: "Base Camp Duffel M",
+            price: "159",
+            desc: "Table with air purifier, stained venner,black",
+            image: four
         },
         {
-        name:"Base Camp Duffel M",
-        price:"159",
-        desc:"Table with air purifier, stained venner,black",
-        image:five
+            name: "Base Camp Duffel M",
+            price: "159",
+            desc: "Table with air purifier, stained venner,black",
+            image: five
         },
-        
+
     ]
 
-    const brand =[
+    const brand = [
         {
-            name:"Staples",
-            image:b1
+            name: "Staples",
+            image: b1
         },
         {
-            name:"Sprouts",
-            image:b2
+            name: "Sprouts",
+            image: b2
         },
         {
-            name:"Grocery outlet",
-            image:b3
+            name: "Grocery outlet",
+            image: b3
         },
         {
-            name:"Mollie stones",
-            image:b4
+            name: "Mollie stones",
+            image: b4
         },
         {
-            name:"Sports Basement",
-            image:b5
+            name: "Sports Basement",
+            image: b5
         },
         {
-            name:"Container Store",
-            image:b6
+            name: "Container Store",
+            image: b6
         },
         {
-            name:"Target",
-            image:b7
+            name: "Target",
+            image: b7
         },
         {
-            name:"Bevmo!",
-            image:b8
+            name: "Bevmo!",
+            image: b8
         },
     ]
 
-    const off= [
-        {off:"100",
-            img:off1,
-            bg:"teal"
+    const off = [
+        {
+            off: "100",
+            img: off1,
+            bg: "bg-teal-100",
+            bg2: "text-teal-900"
         },
-        {off:"29",
-            img:off2,
-            bg:"purple"
+        {
+            off: "29",
+            img: off2,
+            bg: "bg-purple-100"
+            ,
+            bg2: "text-purple-900"
         },
-        {off:"67",
-            img:off3,
-            bg:"lime"
+        {
+            off: "67",
+            img: off3,
+            bg: "bg-lime-100"
+            ,
+            bg2: "text-lime-900"
         },
-        {off:"50",
-            img:off4,
-            bg:"rose"
+        {
+            off: "50",
+            img: off4,
+            bg: "bg-rose-100",
+            bg2: "text-rose-900"
         },
     ]
 
     const filter = [
-        {name:"Gadgets"},
-        {name:"Fashion"},
-        {name:"Toys"},
-        {name:"Education"},
-        {name:"Beauty"},
-        {name:"Fitness"},
-        {name:"Sneakers"},
+        { name: "Gadgets" },
+        { name: "Fashion" },
+        { name: "Toys" },
+        { name: "Education" },
+        { name: "Beauty" },
+        { name: "Fitness" },
+        { name: "Sneakers" },
     ]
 
-    return(
-    <>
-    <Nav/>
-    <main >
-        <section className=" flex flex-col">
-        <img src={commerce} className=" w-full max-sm:w-fit h-screen z-0" />
-        <div className="absolute z-10 pt-40 max-sm:pt-20 pl-10 max-sm:w-60">
-            <h2 className="text-[#003d29] text-7xl font-bold max-sm:text-4xl">shopping and <br/>
-                department store.</h2>
+    return (
+        <>
+            <Nav />
+            <main >
+                <section className=" flex flex-col">
+                    <img src={commerce} className=" w-full max-sm:w-fit h-screen z-0" />
+                    <div className="absolute z-10 pt-40 max-sm:pt-20 pl-10 max-sm:w-60">
+                        <h2 className="text-[#003d29] text-7xl font-bold max-sm:text-4xl">shopping and <br />
+                            department store.</h2>
 
-                <p className="py-10 text-xl max-sm:text-sm text-gray-600">Shopping is a bit of a relaxing hobby for me, which<br/>
-                 is sometimes troubling for the bank balance.</p>
+                        <p className="py-10 text-xl max-sm:text-sm text-gray-600">Shopping is a bit of a relaxing hobby for me, which<br />
+                            is sometimes troubling for the bank balance.</p>
 
-                 <button className="px-8 py-4 rounded-full bg-[#003d29] text-white cursor-pointer hover:bg-[#036846] duration-500">Learn More</button>
-        </div>
-        </section>
-        
-        <section className="md:px-10 px-4 py-30 ">
-            <h2 className="font-bold text-4xl z-10">Shop our top categories</h2>
-
-            <div className="grid grid-cols-6 py-6 gap-5 max-sm:grid-cols-2">
-
-                {images.map(cat=>
-                <button className="rounded-2xl appear w-fit overflow-hidden relative cursor-pointer">
-                    <p className="absolute left-12 top-2.5 font-bold text-xl z-10 text-white">{cat.name}</p>
-                    <img src={cat.image} className="hover:scale-120 duration-500 rounded-2xl" />
-                </button>)}
-
-            </div>
-        </section>
-
-        <section className="px-10 pb-10 appear">
-             <h2 className="font-bold text-4xl z-10">Weekly Popular Products</h2>
-
-             <div className="flex flex-nowrap gap-4 overflow-x-scroll space-x-4 p-5 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200">
-                {products.map(pro=>
-                    <div className="space-y-6 shrink-0 ">
-                    <div className="bg-gray-200 dark:bg-gray-950 rounded-md relative px-8 ">
-                        <img src={pro.image} className="hover:scale-110 duration-500 cursor-pointer"/>
-                        <div className="absolute bg-amber-50 rounded-full p-1 top-2 right-2 text-2xl hover:text-rose-600 cursor-pointer duration-700 dark:bg-gray-900"><BiHeart/></div>
-                        
+                        <button className="px-8 py-4 rounded-full bg-[#003d29] text-white cursor-pointer hover:bg-[#036846] duration-500">Learn More</button>
                     </div>
-                    <div className="flex justify-between text-lg font-semibold">
-                        <p>{pro.name}</p>
-                        <p><sup className="text-sm ">$</sup>{pro.price} <sup className="text-sm ">.00</sup></p>
+                </section>
+
+                <section className="md:px-10 px-4 py-30 ">
+                    <h2 className="font-bold text-4xl z-10">Shop our top categories</h2>
+
+                    <div className="grid grid-cols-6 py-6 gap-5 max-sm:grid-cols-2">
+
+                        {images.map(cat =>
+                            <button className="rounded-2xl appear w-fit overflow-hidden relative cursor-pointer">
+                                <p className="absolute left-12 top-2.5 font-bold text-xl z-10 text-white">{cat.name}</p>
+                                <img src={cat.image} className="hover:scale-120 duration-500 rounded-2xl" />
+                            </button>)}
+
                     </div>
-                    <p className="text-sm">{pro.desc}</p>
+                </section>
 
-                    <button className="px-6 py-2 border duration-500 rounded-full cursor-pointer hover:bg-[#036846] hover:text-white hover:border-[#036846]">Add to Cart</button>
+                <section className="px-10 pb-10 appear">
+                    <h2 className="font-bold text-4xl z-10">Weekly Popular Products</h2>
+
+                    <div className="flex flex-nowrap gap-4 overflow-x-scroll space-x-4 p-5 scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200">
+                        {products.map(pro =>
+                            <div className="space-y-6 shrink-0 ">
+                                <div className="bg-gray-200 dark:bg-gray-950 rounded-md relative px-8 ">
+                                    <img src={pro.image} className="hover:scale-110 duration-500 cursor-pointer" />
+                                    <div className="absolute bg-amber-50 rounded-full p-1 top-2 right-2 text-2xl hover:text-rose-600 cursor-pointer duration-700 dark:bg-gray-900"><BiHeart /></div>
+
+                                </div>
+                                <div className="flex justify-between text-lg font-semibold">
+                                    <p>{pro.name}</p>
+                                    <p><sup className="text-sm ">$</sup>{pro.price} <sup className="text-sm ">.00</sup></p>
+                                </div>
+                                <p className="text-sm">{pro.desc}</p>
+
+                                <button className="px-6 py-2 border duration-500 rounded-full cursor-pointer hover:bg-[#036846] hover:text-white hover:border-[#036846]">Add to Cart</button>
+                            </div>
+                        )}
+
+
                     </div>
-                )}
-                
 
-             </div>
 
-            
-        </section>
+                </section>
 
-         <section className="px-10 py-10 space-y-5 ">
-             <h2 className="font-bold text-4xl z-10">Choose By Brand</h2>
+                <section className="px-10 py-10 space-y-5 ">
+                    <h2 className="font-bold text-4xl z-10">Choose By Brand</h2>
 
-             <div className="grid grid-cols-4 gap-4 space-x-4 max-sm:grid-cols-2 ">
-                {brand.map(bra=>
-                    <div className="flex w-full space-x-3 border border-background items-center hover:border hover:border-foreground rounded-lg px-3 py-5 bg-gray-100 duration-500 dark:bg-gray-950 appear">
-                        <div><img src={bra.image} className="hover:scale-130 duration-500" /></div>
-                        <div className="space-y-2">
-                            <p className="font-bold">{bra.name}</p>
-                            <p className="text-sm">Delivery with in 24 hours</p>
+                    <div className="grid grid-cols-4 gap-4 space-x-4 max-sm:grid-cols-2 ">
+                        {brand.map(bra =>
+                            <div className="flex w-full space-x-3 border border-background items-center hover:border hover:border-foreground rounded-lg px-3 py-5 bg-gray-100 duration-500 dark:bg-gray-950 appear">
+                                <div><img src={bra.image} className="hover:scale-130 duration-500" /></div>
+                                <div className="space-y-2">
+                                    <p className="font-bold">{bra.name}</p>
+                                    <p className="text-sm">Delivery with in 24 hours</p>
+                                </div>
+                            </div>
+                        )}
+
+
+                    </div>
+
+
+                </section >
+
+                <section className="px-10 py-10 space-y-10 ">
+                    <h2 className="font-bold text-4xl z-10">Get Up to 70% off</h2>
+
+                    <div className="grid grid-cols-4 gap-6 max-sm:grid-cols-1">
+                        {off.map(o =>
+                            <div className={` overflow-hidden rounded-2xl space-y-4 ${o.bg} appear`}>
+                                <div className={` p-5  space-y-4`}>
+                                    <p className="font-bold text-3xl text-gray-700">Save</p>
+                                    <p className={`${o.bg2} font-bold text-5xl`}><sup className="text-lg">$</sup>{o.off}</p>
+                                    <p className="font-medium text-gray-950">Explore Our Furniture & Home Furnishing Range</p>
+                                </div>
+                                <div className="overflow-hidden">
+                                    <img src={o.img} className="w-full hover:scale-125 duration-700" />
+
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </section>
+
+                <section className="my-10  relative ">
+                    <img src={room} className="w-full h-full appear2 max-sm:h-120" />
+
+
+
+                    <div className="absolute bg-[#003d29] md:w-130 md:h-110 max-sm:mx-3  top-20 right-10 max-sm:top-5 max-sm:right-1 p-14 max-sm:p-8 space-y-10">
+                        <h2 className="text-5xl text-white font-bold max-sm:text-4xl">Get 5% Cash back on $200</h2>
+                        <p className="text-xl max-sm:text-xl text-white">Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank balance.</p>
+                        <button className="rounded-full py-3 px-8 text-white border border-white hover:bg-gray-800 hover:border-gray-800 duration-500 text-xl max-sm:text-md cursor-pointer">Learn More</button>
+                    </div>
+                </section>
+
+                <section className="space-y-10 p-5">
+                    <h2 className="font-bold text-4xl z-10">Todays Best Deals for you!</h2>
+
+                    <div className="flex space-x-3 flex-wrap gap-2 ">
+                        {filter.map(fi =>
+                            <button className="outline outline-gray-300 rounded-full px-4 py-2 font-medium cursor-pointer">{fi.name}</button>
+                        )}
+                    </div>
+
+                    <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-4  space-x-4 p-5 ">
+                        {products.map(pro =>
+                            <div className="space-y-6 shrink-0 appear ">
+                                <div className="bg-gray-200 dark:bg-gray-950/70 rounded-md relative px-8 flex justify-center">
+                                    <img src={pro.image} className="hover:scale-110 duration-500 cursor-pointer" />
+                                    <div className="absolute bg-amber-50 rounded-full p-1 top-2 right-2 text-2xl hover:text-rose-600 cursor-pointer duration-700 dark:bg-gray-900"><BiHeart /></div>
+
+                                </div>
+                                <div className="flex justify-between text-lg font-semibold">
+                                    <p>{pro.name}</p>
+                                    <p><sup className="text-sm ">$</sup>{pro.price} <sup className="text-sm ">.00</sup></p>
+                                </div>
+                                <p className="text-sm">{pro.desc}</p>
+
+                                <button className="px-6 py-2 border duration-500 rounded-full cursor-pointer hover:bg-[#036846] hover:text-white hover:border-[#036846]">Add to Cart</button>
+                            </div>
+                        )}
+
+
+                    </div>
+                </section>
+
+                <section className="py-10 ">
+
+                    <div className="flex justify-around bg-rose-100 p-15 relative">
+                        <div className="space-y-8 z-10">
+                            <p className="text-6xl font-bold text-gray-800">Get 5% Cash back</p>
+                            <p className="text-2xl">on Shopcart.com</p>
+                            <button className="rounded-full py-3 px-8 text-white bg-[#003d29] hover:bg-[#001d13]  duration-500 text-xl max-sm:text-md cursor-pointer">Learn More</button>
                         </div>
-                    </div>
-                )}
-                
 
-             </div>
-
-            
-        </section >
-
-        <section className="px-10 py-10 space-y-10 ">
-            <h2 className="font-bold text-4xl z-10">Get Up to 70% off</h2>
-
-            <div className="grid grid-cols-4 gap-6 max-sm:grid-cols-1">
-                {off.map(o=>
-                <div className={` overflow-hidden rounded-2xl space-y-4 bg-${o.bg}-100 appear`}>
-                    <div className={` p-5  space-y-4` }>
-                        <p className="font-bold text-3xl text-gray-700">Save</p>
-                        <p className={`text-${o.bg}-900 font-bold text-5xl`}><sup className="text-lg">$</sup>{o.off}</p>
-                        <p className="font-medium text-gray-950">Explore Our Furniture & Home Furnishing Range</p>
-                    </div>
-                    <div className="overflow-hidden">
-                       <img src={o.img} className="w-full hover:scale-125 duration-700" />
+                        <div className="z-0">
+                            <img src={cards1} className="absolute -rotate-20 top-20 right-10 max-sm:top-40 max-sm:right-0" />
+                            <img src={cards2} className="absolute -rotate-30 top-17 right-15 max-sm:top-37 max-sm:right-5" />
+                        </div>
 
                     </div>
-                </div>
-               )}
-            </div>
-        </section>
+                </section>
+            </main>
 
-        <section className="my-10  relative ">
-                <img src={room} className="w-full h-full appear2 max-sm:h-120" />
-            
-            
+            <Footer />
 
-            <div className="absolute bg-[#003d29] md:w-130 md:h-110 max-sm:mx-3  top-20 right-10 max-sm:top-5 max-sm:right-1 p-14 max-sm:p-8 space-y-10">
-                <h2 className="text-5xl text-white font-bold max-sm:text-4xl">Get 5% Cash back on $200</h2>
-                <p className="text-xl max-sm:text-xl text-white">Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank balance.</p>
-                <button className="rounded-full py-3 px-8 text-white border border-white hover:bg-gray-800 hover:border-gray-800 duration-500 text-xl max-sm:text-md cursor-pointer">Learn More</button>
-            </div>
-        </section>
+        </>
 
-        <section className="space-y-10 p-5">
-              <h2 className="font-bold text-4xl z-10">Todays Best Deals for you!</h2>
+    )
 
-              <div className="flex space-x-3 flex-wrap gap-2 ">
-                {filter.map(fi=>
-                <button className="outline outline-gray-300 rounded-full px-4 py-2 font-medium cursor-pointer">{fi.name}</button>
-                )}
-              </div>
-
-             <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-4  space-x-4 p-5 ">
-                {products.map(pro=>
-                    <div className="space-y-6 shrink-0 appear ">
-                    <div className="bg-gray-200 dark:bg-gray-950/70 rounded-md relative px-8 flex justify-center">
-                        <img src={pro.image} className="hover:scale-110 duration-500 cursor-pointer"/>
-                        <div className="absolute bg-amber-50 rounded-full p-1 top-2 right-2 text-2xl hover:text-rose-600 cursor-pointer duration-700 dark:bg-gray-900"><BiHeart/></div>
-                        
-                    </div>
-                    <div className="flex justify-between text-lg font-semibold">
-                        <p>{pro.name}</p>
-                        <p><sup className="text-sm ">$</sup>{pro.price} <sup className="text-sm ">.00</sup></p>
-                    </div>
-                    <p className="text-sm">{pro.desc}</p>
-
-                    <button className="px-6 py-2 border duration-500 rounded-full cursor-pointer hover:bg-[#036846] hover:text-white hover:border-[#036846]">Add to Cart</button>
-                    </div>
-                )}
-                
-
-             </div>
-        </section>
-
-        <section className="py-10 ">
-
-            <div className="flex justify-around bg-rose-100 p-15 relative">
-                <div className="space-y-8 z-10">
-                    <p className="text-6xl font-bold text-gray-800">Get 5% Cash back</p>
-                    <p className="text-2xl">on Shopcart.com</p>
-                    <button className="rounded-full py-3 px-8 text-white bg-[#003d29] hover:bg-[#001d13]  duration-500 text-xl max-sm:text-md cursor-pointer">Learn More</button>
-                </div>
-
-                <div className="z-0">
-                    <img src={cards1} className="absolute -rotate-20 top-20 right-10 max-sm:top-40 max-sm:right-0" />
-                    <img src={cards2} className="absolute -rotate-30 top-17 right-15 max-sm:top-37 max-sm:right-5" />
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <Footer/>
-    
-    </>
-    
-)
-    
 }
