@@ -6,6 +6,7 @@ import { Loading } from './Components/Loading'
 
 function App() {
   const Home = lazy(()=>import('./pages/Home'));
+  const Login = lazy(()=>import('./pages/Login'));
     const Notfound = lazy(()=>import('./pages/Notfound'));
 
   return (
@@ -15,6 +16,9 @@ function App() {
         <Routes>
           <Route index element={<Home/>} />
           <Route path='*' element={<Notfound/>} />
+
+          <Route path='/login' element={<Login/>} />
+
         </Routes>
       </Suspense>
      </BrowserRouter>

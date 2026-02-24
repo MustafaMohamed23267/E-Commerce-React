@@ -27,6 +27,11 @@ export const Nav = ()=>
                 name:"Delivery",
                 path:""
             },
+            
+            {
+                name:"Login",
+                path:"/login"
+            },
         ];
          const [menu , setMenu] = useState(false);
         return(
@@ -67,7 +72,7 @@ export const Nav = ()=>
                     </div>
 
                     <div className="flex space-x-4 mt-1.5 max-sm:hidden">
-                        {navlinks.map(link=><NavLink>{link.name}</NavLink>)}
+                        {navlinks.map(link=><NavLink to={link.path}>{link.name}</NavLink>)}
                     </div>
 
                     <div className=" flex ">
