@@ -19,7 +19,7 @@ export default function Register()
                     last_name:"",
                     country:"",
                     Birth_Date:"",
-                    role:"",
+                    role:"user",
                     email:"",
                     password:"",
                     password_confirmation:""
@@ -109,7 +109,7 @@ export default function Register()
             placeholder="Birth Date...."
             />
 
-            <div className="flex space-x-12">
+            {/* <div className="flex space-x-12">
                 <div className="space-x-3">
                     <label className="text-white">Admin</label>
                     <input type="radio" name="role" value="admin" 
@@ -124,7 +124,7 @@ export default function Register()
                     />
                 </div>
                 
-            </div>
+            </div> */}
 
             <input type="password" 
             value={form.password} 
