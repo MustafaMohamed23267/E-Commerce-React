@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 
 export default function Login()
     {
+       
+            
+
             const Api_url = import.meta.env.VITE_API_URL;
             const {setToken} = useContext(AppContext);
 
@@ -51,6 +54,7 @@ export default function Login()
              
             <section className="p-10 flex flex-col space-y-10 z-10 bg-orange-700/30 backdrop-blur-sm rounded-xl ">
             <h1 className="text-white text-4xl text-center p-5">Login</h1>
+            
             <input type="email" 
             value={form.email} 
             onChange={(e)=>{setForm({...form,email:e.target.value})}} 
@@ -64,9 +68,9 @@ export default function Login()
             placeholder="please enter your password...."
             />
 
-            <button onClick={handleLogin} className="py-1.5 px-5 rounded-xl bg-indigo-500 hover:bg-indigo-700 duration-500 text-white cursor-pointer"> Login</button>
+            <button onClick={handleLogin} className="py-1.5 px-5 rounded-xl bg-red-500 hover:bg-orange-700 duration-500 text-white cursor-pointer"> Login</button>
 
-            <p className="text-white text-sm">if you don't have an account you can <Link className="text-indigo-400 hover:text-indigo-600 duration-500">Register</Link></p>
+            <p className="text-white text-sm">if you don't have an account you can <Link to='/register' className="text-indigo-400 hover:text-indigo-600 duration-500">Register</Link></p>
              </section>
 
              <section></section>

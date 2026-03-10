@@ -7,6 +7,7 @@ import { Loading } from './Components/Loading'
 function App() {
   const Home = lazy(()=>import('./pages/Home'));
   const Login = lazy(()=>import('./pages/Login'));
+  const Register = lazy(()=>import('./pages/Register'));
     const Notfound = lazy(()=>import('./pages/Notfound'));
 
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='*' element={<Notfound/>} />
 
           <Route path='/login' element={<Login/>} />
+          <Route path='/register' element={<Register/>}/>
 
         </Routes>
       </Suspense>

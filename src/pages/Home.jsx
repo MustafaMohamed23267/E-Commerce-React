@@ -34,12 +34,31 @@ import room from '../assets/room2.jpg';
 
 import { BiHeart } from "react-icons/bi";
 import { Footer } from "../Components/Footer";
+import { useRef, useState } from "react";
 
 
 
 
 
 export default function Home() {
+
+     const [timer , setTimer] = useState(0);
+            const interval = useRef();
+    
+            const startTimer = ()=>
+                {
+                    interval.current = setInterval(() => {
+                        setTimer((PrevTimer)=>PrevTimer+1)
+                    }, 1000);
+                }
+    
+                const StopTimer = ()=>
+                    {
+                        clearInterval(interval.current);
+                    }
+    
+
+
     const images = [
         {
             name: "Sneakers",
@@ -331,6 +350,17 @@ export default function Home() {
                         </div>
 
                     </div>
+                </section>
+
+                <section>
+                    <div className="text-center space-y-10">
+                <p className="text-5xl ">{timer}</p>
+                <div className="flex justify-center space-x-4">
+                    <button onClick={startTimer}  className="py-1 px-4 bg-green-500 cursor-pointer text-white rounded-md hover:bg-green-700 duration-500">Start</button>
+                    <button onClick={StopTimer} className="py-1 px-4 bg-red-500 cursor-pointer text-white rounded-md hover:bg-red-700 duration-500">Stop</button>
+                    <button onClick={()=>setTimer(0)} className="py-1 px-4 bg-gray-500 cursor-pointer text-white rounded-md hover:bg-gray-700 duration-500">reset</button>
+                </div>
+            </div>
                 </section>
             </main>
 
