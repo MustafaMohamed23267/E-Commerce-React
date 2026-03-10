@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { AppContext } from "../Context/AppContext";
-import login from "../assets/login.jpg";
+import register from "../assets/lone-tree.jpg";
 import { Link } from "react-router-dom";
 
 export default function Register()
@@ -61,7 +61,7 @@ export default function Register()
 
         return <>
          <div>
-                <img src={login} className="fixed w-full h-full z-0" />
+                <img src={register} className="fixed w-full h-full z-0" />
             </div>
         <main className="flex flex-col justify-center items-center p-5">
 
@@ -69,7 +69,7 @@ export default function Register()
 
            
              
-            <section className="p-10 flex flex-col space-y-10 z-10 bg-orange-700/30 backdrop-blur-sm rounded-xl justify-center">
+            <section className="p-10 flex flex-col space-y-10 z-10 bg-gray-700/30 backdrop-blur-sm rounded-xl justify-center">
             <h1 className="text-white text-4xl text-center p-5">Register</h1>
 
             <div className="space-x-6">
