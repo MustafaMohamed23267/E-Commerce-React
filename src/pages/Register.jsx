@@ -1,12 +1,15 @@
-import { useContext, useState } from "react"
+import {  useState } from "react"
 import { AppContext } from "../Context/AppContext";
 import register from "../assets/lone-tree.jpg";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import{RegisterUser} from '../pages/Login/AuthSlice';
 
 export default function Register()
     {
             const Api_url = import.meta.env.VITE_API_URL;
-            const {setToken} = useContext(AppContext);
+            // const {setToken} = useContext(AppContext);
 
             const input_style = "outline-1 outline-gray-300 rounded-full px-2 py-2 w-50 text-white focus:outline-indigo-500";
 
@@ -26,35 +29,47 @@ export default function Register()
                 }
             );
 
+            const dispatch = useDispatch();
+
             const handleLogin = async (e)=>
                 {
                     e.preventDefault();
-                    const RegisterDate = new FormData();
-                    RegisterDate.append("first_name",form.first_name);
-                    RegisterDate.append("last_name",form.last_name);
-                    RegisterDate.append("country",form.country);
-                    RegisterDate.append("role",form.role);
-                    RegisterDate.append("Birth_Date",form.Birth_Date);
-                    RegisterDate.append("email",form.email);
-                    RegisterDate.append("password",form.password);
-                    RegisterDate.append("password_confirmation",form.password_confirmation);
 
-                    const Login = await fetch(`${Api_url}/register`,{
-                        method:"POST",
-                        body:RegisterDate,
-                        headers: {
-                                    Accept: "application/json"
-                                }
-                      })
+                    const result = await dispatch(RegisterUser(form));
 
-                      const res = await Login.json();
-                      console.log(res);
-                      localStorage.setItem("token",res.token);
-                      setToken(res.token);
-                      setLoginMassage("Successfull Register");
-                      setTimeout(() => {
-                        setLoginMassage("");
-                      }, 3000);
+                    console.log(result.payload);
+
+                    if(RegisterUser.fulfilled.match(result))
+                        {
+                        setLoginMassage("Successfull Register");
+                        // setTimeout(() => {
+                        
+                        // }, 3000);
+                        }
+
+                    // const RegisterDate = new FormData();
+                    // RegisterDate.append("first_name",form.first_name);
+                    // RegisterDate.append("last_name",form.last_name);
+                    // RegisterDate.append("country",form.country);
+                    // RegisterDate.append("role",form.role);
+                    // RegisterDate.append("Birth_Date",form.Birth_Date);
+                    // RegisterDate.append("email",form.email);
+                    // RegisterDate.append("password",form.password);
+                    // RegisterDate.append("password_confirmation",form.password_confirmation);
+
+                    // const Login = await fetch(`${Api_url}/register`,{
+                    //     method:"POST",
+                    //     body:RegisterDate,
+                    //     headers: {
+                    //                 Accept: "application/json"
+                    //             }
+                    //   })
+
+                    //   const res = await Login.json();
+                    //   console.log(res);
+                    //   localStorage.setItem("token",res.token);
+                    //   setToken(res.token);
+                      
                       
                 }
 
@@ -71,6 +86,8 @@ export default function Register()
              
             <section className="p-10 flex flex-col space-y-10 z-10 bg-gray-700/30 backdrop-blur-sm rounded-xl justify-center">
             <h1 className="text-white text-4xl text-center p-5">Register</h1>
+
+            {loginMassage&&<p>{loginMassage}</p>}
 
             <div className="space-x-6">
                 <input type="text" 

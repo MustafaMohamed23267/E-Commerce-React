@@ -1,5 +1,5 @@
 import { Nav } from "../Components/Nav";
-import commerce from '../assets/commerce11.jpg';
+import commerce from '../assets/home.jpg';
 import sneakers from '../assets/sneak.png';
 import travel from '../assets/travel.png';
 import tech from '../assets/tech.png';
@@ -35,6 +35,8 @@ import room from '../assets/room2.jpg';
 import { BiHeart } from "react-icons/bi";
 import { Footer } from "../Components/Footer";
 import { useRef, useState } from "react";
+import Carousel from "../Components/Carousel";
+import { useSelector } from "react-redux";
 
 
 
@@ -194,17 +196,22 @@ export default function Home() {
         { name: "Sneakers" },
     ]
 
+    //  const {user} = useSelector((state)=>state.auth);
+
+    //  console.log("home user  "+user);
+
     return (
         <>
             <Nav />
             <main >
+                {/*  <Carousel/> */}
                 <section className=" flex flex-col">
                     <img src={commerce} className=" w-full max-sm:w-fit h-screen z-0" />
                     <div className="absolute z-10 pt-40 max-sm:pt-20 pl-10 max-sm:w-60">
                         <h2 className="text-[#003d29] text-7xl font-bold max-sm:text-4xl">shopping and <br />
                             department store.</h2>
 
-                        <p className="py-10 text-xl max-sm:text-sm text-gray-600">Shopping is a bit of a relaxing hobby for me, which<br />
+                        <p className="py-10 text-xl max-sm:text-sm text-gray-900">Shopping is a bit of a relaxing hobby for me, which<br />
                             is sometimes troubling for the bank balance.</p>
 
                         <button className="px-8 py-4 rounded-full bg-[#003d29] text-white cursor-pointer hover:bg-[#036846] duration-500">Learn More</button>

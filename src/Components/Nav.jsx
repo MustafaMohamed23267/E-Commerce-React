@@ -1,15 +1,44 @@
 import { MdLocalPhone } from "react-icons/md"
 import cart from '../assets/shopping-cart.png'
 import { Theme } from "./Theme"
-import { Links, NavLink } from "react-router-dom"
+import { Links, NavLink, useNavigate } from "react-router-dom"
 import { GoSearch } from "react-icons/go"
 import { FiUser } from "react-icons/fi"
 import { BsCart, BsCartPlus } from "react-icons/bs"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import {  useContext, useState } from "react"
+import { Menu, X, XCircle } from "lucide-react"
+import { AppContext } from "../Context/AppContext"
+import { useDispatch } from "react-redux"
+
+import {GetUser} from '../pages/Login/AuthSlice';
+
+import {logout} from '../pages/Login/AuthSlice';
+import { CiWarning } from "react-icons/ci"
+import { FcCancel } from "react-icons/fc"
 
 export const Nav = ()=>
     {
+
+        const [logoutBanner , setLogoutBanner] = useState(false);
+
+        const [profileBanner , setprofileBanner] = useState(false);
+
+        const [cartSlide , setCartSlide] = useState(false);
+
+        const [cartAnimat , setCartAnimate] = useState("cart");
+
+        const dispatch = useDispatch();
+
+   
+
+
+        const {user} = useContext(AppContext);
+       
+        const navigate = useNavigate();
+
+        
+
+
         const navlinks = [
             {
                 name:"Category",
@@ -19,25 +48,91 @@ export const Nav = ()=>
                 name:"Deals",
                 path:""
             },
-            {
+            { 
                 name:"What's New",
                 path:""
             },
             {
                 name:"Delivery",
                 path:""
-            },
-            
-            {
-                name:"Login",
-                path:"/login"
-            },
+            }
         ];
          const [menu , setMenu] = useState(false);
         return(
             <>
-            <div className=" z-60">
-                <div  className="bg-[#003d29] text-white flex justify-between space-x-8 w-full py-1.5 px-2 md:px-10">
+
+{/* logout banner */}
+
+{logoutBanner&&
+             <div className="z-100 fixed top-60 md:right-95 max-sm:right-5 bg-white/50 dark:bg-white/10 backdrop-blur-sm w-60 h-70 rounded-md  flex justify-center overflow-hidden  ">
+                    <div className="flex flex-col items-center  space-y-6 p-5">
+                        <div><CiWarning className="text-5xl text-red-600"/></div>
+                        <p className="text-center ">Are you sure toy want to Logout?</p>
+                        <div className=" flex flex-col justify-center space-y-3">
+                        <button className="bg-indigo-600 px-20 py-2 rounded-full text-white hover:bg-red-800 duration-500 cursor-pointer"
+                        onClick={()=>{
+                            dispatch(logout());
+                            navigate('/login');
+                        
+                        }
+                        }
+                        >Logout</button>
+                        <button
+                        className="bg-gray-00 px-20 py-2 rounded-full text-gray-900 border border-indigo-500 hover:bg-indigo-500 hover:text-gray-200 duration-500 cursor-pointer"
+                        onClick={()=>setLogoutBanner(false)}
+                        >Cancle</button>
+                    </div>
+                    </div>
+                     
+                </div>
+}
+{/* logout banner end */}
+
+
+
+{/* profile banner */}
+
+{profileBanner&&
+<div className="z-100 fixed top-20 md:right-45 max-sm:right-5 bg-white/50 dark:bg-white/10 backdrop-blur-sm p-10 rounded-md  flex justify-center overflow-hidden  ">
+ 
+<div className="flex flex-col space-y-4">
+     <span className="max-sm:hidden">{user.first_name}</span>
+
+  <span className="max-sm:hidden">{user.email}</span>
+                              <button 
+                              className="px-4 py-1.5 bg-red-500 rounded-full text-white hover:bg-red-700 duration-500 cursor-pointer" 
+                              onClick={()=>setLogoutBanner(true)}
+                              >Logout</button>
+ 
+</div>
+ 
+ </div>
+}
+ 
+{/* profile banner  end */}
+
+
+{/* cart side */}
+
+
+{cartSlide&&
+<div className={`w-100 h-full bg-gray-200 fixed right-0 z-10 ${cartAnimat}  `}>
+    <div className="absolute left-2 top-20 z-20">
+        <button className="bg-red-60 cursor-pointer text-2xl text-red-600 " onClick={()=>{
+            setCartAnimate("cartout")
+            }}><XCircle/></button>
+    </div>
+
+</div>
+}
+
+
+
+
+           
+
+            <div className="fixed bg-background z-60 w-full">
+                {/* <div  className="bg-[#003d29] text-white flex justify-between space-x-8 w-full py-1.5 px-2 md:px-10">
                 <div className="flex space-x-1.5 max-sm:text-sm"> 
                     <MdLocalPhone className="mt-1"/>
                     <span>+201110792037</span>
@@ -61,7 +156,11 @@ export const Nav = ()=>
                         <option>usa</option>
                     </select>
                 </div>
-                </div>
+                </div> */}
+
+
+
+
 
 {/* mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */}
 
@@ -71,7 +170,7 @@ export const Nav = ()=>
                     <h1 className="text-[#003d29] text-3xl font-bold">ShopCart </h1>
                     </div>
 
-                    <div className="flex space-x-4 mt-1.5 max-sm:hidden">
+                    <div className="flex space-x-4 mt-1.5 max-lg:hidden">
                         {navlinks.map(link=><NavLink to={link.path}>{link.name}</NavLink>)}
                     </div>
 
@@ -82,16 +181,36 @@ export const Nav = ()=>
                             />  
                     </div>
 
-                    <div className="flex space-x-6 max-sm:space-x-3 mt-1.5 ">
-                        <div className="flex space-x-2 font-semibold">
-                            <FiUser className="mt-1"/>
-                            <span className="max-sm:hidden">Account</span>
+                    <div className="flex space-x-6  max-sm:space-x-3 mt-1.5 ">
+                       
+                           
+                            {user&&user.id?
+                            <div className="font-semibold">
+                                <button 
+                                className="p-1 rounded-full bg-gray-200 cursor-pointer dark:bg-white/5"
+                                onClick={()=>setprofileBanner(prev=>!prev)}
+                                >
+                                    <FiUser className="text-2xl"/>
+                                </button>
+                             
+                             
                         </div>
+                            :
+                            
+                            <NavLink className="hover:text-[#036846] duration-500 hover:scale-115 max-lg:hidden" to={'/login'}>Login</NavLink>
+                           }
+                            
+                            
+                        
 
-                        <div className="flex space-x-2 font-semibold">
+                        <button className="flex space-x-2 font-semibold cursor-pointer"
+                        onClick={()=>
+                            {setCartSlide(true);
+                            setCartAnimate("cart")}}
+                        >
                             <BsCartPlus className="mt-1"/>
                             <span  className="max-sm:hidden">Cart</span>
-                        </div>
+                        </button>
                         
                     </div>
 

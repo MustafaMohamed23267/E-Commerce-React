@@ -1,39 +1,22 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import{GetUser} from '../pages/Login/AuthSlice';
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-    const [token, setToken] = useState(localStorage.getItem("token"));
-    const [user, setUser] = useState(null);
-    const Api_url = import.meta.env.VITE_API_URL;
 
-    const getUser = async () => {
-        const res = await fetch(`${Api_url}/user`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        });
 
-        const data = await res.json();
-
-        if (res.ok) {
-            setUser(data);
-        }
-    };
-
-    useEffect(() => {
-        if (!token) return;
-
-        const fetchUser = async () => {
-            await getUser();
-        };
-
-        fetchUser();
-    }, [token]);
+     const dispatch = useDispatch();
+            useEffect(()=>
+              {
+               
+                dispatch(GetUser());
+              },[dispatch]);
+           const {user} = useSelector((state)=>state.auth);
 
     return (
-        <AppContext.Provider value={{ token, setToken, user, setUser }}>
+        <AppContext.Provider value={{ user }}>
             {children}
         </AppContext.Provider>
     );
