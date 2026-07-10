@@ -29,6 +29,8 @@ export const Nav = ()=>
 
         const dispatch = useDispatch();
 
+        const profilehover = "text-sky-500 bg-sky-300/50";
+
    
 
 
@@ -96,9 +98,15 @@ export const Nav = ()=>
 <div className="z-100 fixed top-20 md:right-45 max-sm:right-5 bg-white/50 dark:bg-white/10 backdrop-blur-sm p-10 rounded-md  flex justify-center overflow-hidden  ">
  
 <div className="flex flex-col space-y-4">
-     <span className="max-sm:hidden">{user.first_name}</span>
 
-  <span className="max-sm:hidden">{user.email}</span>
+    <div className="flex flex-col space-y-1.5">
+        <span className="max-sm:hidden"> hello</span>
+           <span className="max-sm:hidden font-bold">{user.first_name} {user.last_name}</span>
+         <span className="max-sm:hidden">{user.email}</span>
+    </div>
+    
+
+  <hr/>
                               <button 
                               className="px-4 py-1.5 bg-red-500 rounded-full text-white hover:bg-red-700 duration-500 cursor-pointer" 
                               onClick={()=>setLogoutBanner(true)}
@@ -117,11 +125,32 @@ export const Nav = ()=>
 
 {cartSlide&&
 <div className={`w-100 h-full bg-gray-200 fixed right-0 z-10 ${cartAnimat}  `}>
-    <div className="absolute left-2 top-20 z-20">
-        <button className="bg-red-60 cursor-pointer text-2xl text-red-600 " onClick={()=>{
+    
+    <div className="relative left-2 top-20  z-20 h-screen">
+        <div className="absolute  ">
+             <button className="bg-red-60 cursor-pointer text-2xl text-red-600 " onClick={()=>{
             setCartAnimate("cartout")
             }}><XCircle/></button>
+        </div>
+       
+
+            <h2 className=" text-center z-30">My Cart</h2>
+
+            <div className="absolute bottom-30 w-full">
+                <div className="flex flex-col space-y-2.5 px-5">
+                    <div className="flex justify-between text-[#003d29] font-bold">
+                        <p>SUBTOTAL</p>
+                        <p>$28.00</p>
+                    </div>
+                    <button className="rounded-md border border-[#003d29] hover:bg-[#003d29] duration-500 hover:text-white cursor-pointer py-2 font-bold">VIEW CART</button>
+                    <button className="rounded-md font-bold border text-white bg-[#003d29] cursor-pointer py-2">CHECK OUT</button>
+                    
+                </div>
+                
+
+            </div>
     </div>
+    
 
 </div>
 }
@@ -187,7 +216,7 @@ export const Nav = ()=>
                             {user&&user.id?
                             <div className="font-semibold">
                                 <button 
-                                className="p-1 rounded-full bg-gray-200 cursor-pointer dark:bg-white/5"
+                                className={`p-1 rounded-full bg-gray-200 cursor-pointer dark:bg-gray-800 ${profileBanner?profilehover:""}`}
                                 onClick={()=>setprofileBanner(prev=>!prev)}
                                 >
                                     <FiUser className="text-2xl"/>
