@@ -90,11 +90,44 @@ body {
 .cart
 {
   animation: cart both 1s  ;
+
+  
 }
 
 .cartout
 {
   animation: cartout both 1s  ;
+
+
+}
+
+.profilein
+{
+   
+
+
+   opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.profileout
+{
+ opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity .3s ease, transform .3s ease;
+  pointer-events: none;
+}
+
+
+.themedark
+{
+   animation: themedark both .4s  ;
+}
+
+.themelight
+{
+   animation: themelight both .4s  ;
 }
 
 @keyframes appear {
@@ -126,11 +159,48 @@ body {
         {
             
              opacity: 1;
-             transform: translateY(0px);
+             transform: translateX(0px);
             
         }
     }
 
+
+@keyframes themedark {
+        from
+        {
+            opacity: 0;
+            transform: translateX(20px);
+           
+        }
+       
+        to
+        {
+            
+             opacity: 1;
+             transform: translateX(0px);
+            
+        }
+    }
+
+    
+@keyframes themelight {
+        from
+        {
+            opacity: 0;
+            transform: translateX(-20px);
+           
+        }
+       
+        to
+        {
+            
+             opacity: 1;
+             transform: translateX(0px);
+            
+        }
+    }
+
+   
 
 @keyframes cartout {
 
@@ -138,10 +208,10 @@ body {
         {
             
              opacity: 1;
-             transform: translateY(0px);
+             transform: translateX(0px);
             
         }
-        
+
         to
         {
             opacity: 0;

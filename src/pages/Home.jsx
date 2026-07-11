@@ -207,7 +207,7 @@ export default function Home() {
                 {/*  <Carousel/> */}
                 <section className=" flex flex-col">
                     <img src={commerce} className=" w-full max-sm:w-fit h-screen z-0" />
-                    <div className="absolute z-10 pt-40 max-sm:pt-20 pl-10 max-sm:w-60">
+                    <div className="absolute z-5 pt-40 max-sm:pt-20 pl-10 max-sm:w-60">
                         <h2 className="text-[#003d29] text-7xl font-bold max-sm:text-4xl">shopping and <br />
                             department store.</h2>
 

@@ -1,7 +1,7 @@
 import { MdLocalPhone } from "react-icons/md"
 import cart from '../assets/shopping-cart.png'
 import { Theme } from "./Theme"
-import { Links, NavLink, useNavigate } from "react-router-dom"
+import { Link, Links, NavLink, useNavigate } from "react-router-dom"
 import { GoSearch } from "react-icons/go"
 import { FiUser } from "react-icons/fi"
 import { BsCart, BsCartPlus } from "react-icons/bs"
@@ -94,15 +94,15 @@ export const Nav = ()=>
 
 {/* profile banner */}
 
-{profileBanner&&
-<div className="z-100 fixed top-20 md:right-45 max-sm:right-5 bg-white/50 dark:bg-white/10 backdrop-blur-sm p-10 rounded-md  flex justify-center overflow-hidden  ">
+
+<div className={`z-100 fixed top-20 md:right-45 max-sm:right-5 bg-white/50 dark:bg-white/10 backdrop-blur-sm p-10 rounded-md  flex justify-center overflow-hidden  ${profileBanner?"profilein":"profileout"} duration-500`}>
  
 <div className="flex flex-col space-y-4">
 
     <div className="flex flex-col space-y-1.5">
-        <span className="max-sm:hidden"> hello</span>
-           <span className="max-sm:hidden font-bold">{user.first_name} {user.last_name}</span>
-         <span className="max-sm:hidden">{user.email}</span>
+        <span className=""> hello</span>
+           <span className=" font-bold">{user.first_name} {user.last_name}</span>
+         <span className="">{user.email}</span>
     </div>
     
 
@@ -115,7 +115,7 @@ export const Nav = ()=>
 </div>
  
  </div>
-}
+
  
 {/* profile banner  end */}
 
@@ -124,7 +124,7 @@ export const Nav = ()=>
 
 
 {cartSlide&&
-<div className={`w-100 h-full bg-gray-200 fixed right-0 z-10 ${cartAnimat}  `}>
+<div className={`w-100 h-full bg-gray-200  fixed right-0 z-10 ${cartAnimat}  `}>
     
     <div className="relative left-2 top-20  z-20 h-screen">
         <div className="absolute  ">
@@ -134,16 +134,16 @@ export const Nav = ()=>
         </div>
        
 
-            <h2 className=" text-center z-30">My Cart</h2>
+            <h2 className=" text-center z-30 font-black text-2xl text-[#003d29] ">CART</h2>
 
             <div className="absolute bottom-30 w-full">
                 <div className="flex flex-col space-y-2.5 px-5">
                     <div className="flex justify-between text-[#003d29] font-bold">
                         <p>SUBTOTAL</p>
-                        <p>$28.00</p>
+                        <p>$00.00</p>
                     </div>
-                    <button className="rounded-md border border-[#003d29] hover:bg-[#003d29] duration-500 hover:text-white cursor-pointer py-2 font-bold">VIEW CART</button>
-                    <button className="rounded-md font-bold border text-white bg-[#003d29] cursor-pointer py-2">CHECK OUT</button>
+                    <Link to={'/cart'} className="rounded-md border border-[#003d29] hover:bg-[#003d29] duration-500 text-center hover:text-white cursor-pointer py-2 font-bold dark:text-gray-900">VIEW CART</Link>
+                    <button className="rounded-md font-bold border text-white bg-[#003d29] hover:bg-[#012c1e] duration-500 cursor-pointer py-2">CHECK OUT</button>
                     
                 </div>
                 

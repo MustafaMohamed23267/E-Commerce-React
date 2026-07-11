@@ -43,11 +43,11 @@ export const Theme =()=>
                 <span className={`${isDark?"font-bold":"text-gray-500"}`}>Dark</span>
                  <button className={` cursor-pointer  ${isDark?"pr-6 pl-1 bg-linear-to-r from-slate-400 to-slate-900 ":"pl-6 pr-1 bg-linear-to-l from-sky-200 to-sky-500"} hover:scale-[1.03] duration-500 py-1 transition-colors rounded-full focus:outline-hidden `} onClick={themetoggle}>
                 {isDark?
-                <div  className="flex space-x-2 duration-700">
+                <div  className="flex space-x-2 duration-700 themedark ">
                     <div  className="h-6 w-6  bg-white rounded-full  "/> 
                     <BsStars/>
                 </div>
-                :<div className="flex space-x-2 duration-700">
+                :<div className="flex space-x-2 duration-700 themelight">
                     <BsCloudsFill className="text-white"/>
                     
                     <div className="h-6 w-6 -right  duration-700 bg-yellow-400 rounded-full" />
