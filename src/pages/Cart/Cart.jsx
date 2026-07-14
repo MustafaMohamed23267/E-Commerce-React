@@ -1,7 +1,20 @@
+import { useState } from "react";
 import { Nav } from "../../Components/Nav";
+import { RiDeleteBin5Line } from "react-icons/ri";
 
 export default function Cart()
 {
+
+    const[count , setCount] = useState(1);
+
+    const price  = 100;
+    const total = price*count;
+
+    const countfun = ()=>
+        {
+             if(count>1){setCount(count-1)}
+                                            else{setCount(1)}
+        }
 
     return(
         <>
@@ -32,10 +45,32 @@ export default function Cart()
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr>
-                                <td>image</td>
-                                <td></td>
+                        <tbody className="pt-4">
+                            <tr className="flex space-x-16 text-[#003d29] font-semibold py-4">
+                                <td className="w-80">image</td>
+                                <td>{price}</td>
+
+                                <td className="w-30 flex  space-x-4">
+                                    <div className="flex justify-around w-15 rounded-full outline outline-gray-400">
+                                        <button 
+                                        className="cursor-pointer "
+                                        onClick={()=>setCount(count+1)}
+                                        >+</button>
+                                        <span>{count}</span>
+                                        <button
+                                        className="cursor-pointer "
+                                        onClick={countfun}
+                                        >-</button>
+
+                                    </div>
+                                    <button 
+                                    className="rounded-full p-1 outline outline-gray-400 cursor-pointer  "
+                                    ><RiDeleteBin5Line/></button>
+                                </td>
+
+                                <td>
+                                    {total}
+                                </td>
                             </tr>
                         </tbody>
 
