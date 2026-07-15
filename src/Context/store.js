@@ -9,6 +9,7 @@ export const Store = configureStore(
         reducer:{
             auth:authReducer,
             products:productsReducer
+            
         }
     }
 )

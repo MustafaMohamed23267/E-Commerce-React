@@ -31,6 +31,8 @@ export const Nav = ()=>
 
         const profilehover = "text-sky-500 bg-sky-300/50";
 
+        const carthover  = "text-sky-500";
+
    
 
 
@@ -130,6 +132,10 @@ export const Nav = ()=>
         <div className="absolute  ">
              <button className="bg-red-60 cursor-pointer text-2xl text-red-600 " onClick={()=>{
             setCartAnimate("cartout")
+            setTimeout(() => {
+               setCartSlide(false) 
+            }, 700);
+            
             }}><XCircle/></button>
         </div>
        
@@ -194,10 +200,10 @@ export const Nav = ()=>
 {/* mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */}
 
                 <div className="flex justify-between py-5 px-8 max-sm:px-2">
-                    <div className="flex space-x-1.5">
+                    <Link to={'/'} className="flex space-x-1.5">
                         <img src={cart} className="w-10"/>
                     <h1 className="text-[#003d29] text-3xl font-bold">ShopCart </h1>
-                    </div>
+                    </Link>
 
                     <div className="flex space-x-4 mt-1.5 max-lg:hidden">
                         {navlinks.map(link=><NavLink to={link.path}>{link.name}</NavLink>)}
@@ -232,7 +238,7 @@ export const Nav = ()=>
                             
                         
 
-                        <button className="flex space-x-2 font-semibold cursor-pointer"
+                        <button className={`flex space-x-2 font-semibold cursor-pointer duration-500 ${cartSlide?carthover:""}`}
                         onClick={()=>
                             {setCartSlide(true);
                             setCartAnimate("cart")}}
