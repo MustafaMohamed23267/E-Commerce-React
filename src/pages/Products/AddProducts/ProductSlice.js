@@ -114,6 +114,8 @@ const ProductsSlice = createSlice(
         reducers:[],
         extraReducers:(builder)=>
             {
+                //          Get products        //
+
                 builder.addCase(GetProducts.pending,(state)=>
                     {
                         state.loading =true;
@@ -132,5 +134,71 @@ const ProductsSlice = createSlice(
                         state.loading = false;
                         state.error = action.payload;
                     })
+
+                //          add products        //
+
+                builder.addCase(AddProduct.pending,(state)=>
+                    {
+                        state.loading = true;
+                        state.error = null;
+                    })
+
+                builder.addCase(AddProduct.fulfilled,(state,action)=>
+                    {
+                        state.loading = false;
+                        state.product = action.payload.product;
+                        state.token = action.payload.token;
+                    })
+
+                builder.addCase(AddProduct.rejected , (state , action)=>
+                    {
+                        state.loading = false; 
+                        state.error = action.payload;
+                    })
+
+                    //          update products        //
+
+                builder.addCase(UpdateProduct.pending , (state)=>
+                    {
+                        state.loading= true;
+                        state.error = null ;
+                    })
+
+                builder.addCase(UpdateProduct.fulfilled , (state,action )=>
+                    {
+                        state.loading= false;
+                        state.product = action.payload.product;
+                        state.token = action.payload.token;
+                    })
+
+                builder.addCase(UpdateProduct.rejected , (state,action)=>
+                    {
+                        state.loading = false;
+                        state.error = action.payload;
+                    })
+
+                //          Delete products        //
+
+                 builder.addCase(DeleteProduct.pending , (state)=>
+                    {
+                        state.loading= true;
+                        state.error = null ;
+                    })
+
+                builder.addCase(DeleteProduct.fulfilled , (state,action )=>
+                    {
+                        state.loading= false;
+                        state.product = action.payload.product;
+                        state.token = action.payload.token;
+                    })
+
+                builder.addCase(DeleteProduct.rejected , (state,action)=>
+                    {
+                        state.loading = false;
+                        state.error = action.payload;
+                    })
+
             }
     })
+
+    export default ProductsSlice.reducer;
