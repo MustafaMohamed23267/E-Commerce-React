@@ -202,7 +202,7 @@ export const Nav = ()=>
                 <div className="flex justify-between py-5 px-8 max-sm:px-2">
                     <Link to={'/'} className="flex space-x-1.5">
                         <img src={cart} className="w-10"/>
-                    <h1 className="text-[#003d29] text-3xl font-bold">ShopCart </h1>
+                    <h1 className="text-[#003d29] dark:text-gray-200 duration-400 text-3xl font-bold">ShopCart </h1>
                     </Link>
 
                     <div className="flex space-x-4 mt-1.5 max-lg:hidden">

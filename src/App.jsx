@@ -11,7 +11,9 @@ import { AppContext } from './Context/AppContext';
   const Login = lazy(()=>import('./pages/Login/Login'));
   const Register = lazy(()=>import('./pages/Register'));
   const Cart = lazy(()=>import('./pages/Cart/Cart'));
-    const Notfound = lazy(()=>import('./pages/Notfound'));
+  const AddProducts = lazy(()=>import('./pages/Products/AddProducts/AddProducts'));
+  const Notfound = lazy(()=>import('./pages/Notfound'));
+
 
 function App() {
 
@@ -40,6 +42,7 @@ function App() {
           <Route path='/login' element={user&&user.id?<Home/>:<Login/>} />
           <Route path='/register' element={user&&user.id?<Home/>:<Register/>}/>
           <Route path='/cart'  element={<Cart/>}/>
+          <Route path='/addproduct' element={<AddProducts/>}/>
 
         </Routes>
       </Suspense>
