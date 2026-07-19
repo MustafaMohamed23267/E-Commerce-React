@@ -236,7 +236,7 @@ export const Nav = ()=>
                         </div>
                             :
                             
-                            <NavLink className="hover:text-[#036846] duration-500 hover:scale-115 max-lg:hidden" to={'/login'}>Login</NavLink>
+                            <NavLink className="hover:text-[#036846] duration-500 hover:scale-115 " to={'/login'}>Login</NavLink>
                            }
                             
                             
