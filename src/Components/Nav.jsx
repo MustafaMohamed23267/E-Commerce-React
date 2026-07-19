@@ -106,6 +106,10 @@ export const Nav = ()=>
            <span className=" font-bold">{user.first_name} {user.last_name}</span>
          <span className="">{user.email}</span>
     </div>
+
+    <Link to={'/addproduct'}
+    className="bg-indigo-500 text-center rounded-full"
+    >Add Product</Link>
     
 
   <hr/>
